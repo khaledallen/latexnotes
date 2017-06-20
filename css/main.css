@@ -54,3 +54,22 @@ code {
   font-family: Courier, 'New Courier', monospace;
   font-size: 16px;
 }
+
+.latex {
+  width: 100%;
+  height: 100vh;
+  resize: none;
+  font-family: Courier, 'New Courier', monospace;
+  font-size: 1.1em;
+  border: none;
+  padding: 10px;
+  background: transparent;
+}
+
+.rendered {
+  box-shadow: #c3c3c3 0px 2px 12px;
+  height: 100vh;
+  width: 100%;
+  padding: 25px;
+  font-family: Georgia, serif;
+}
