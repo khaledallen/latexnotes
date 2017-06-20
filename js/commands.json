@@ -1,0 +1,31 @@
+[
+	{
+		"keyword": "factorial",
+		"syntax": "\\frac{numerator}{denominator}"
+	},
+	{
+		"keyword": "binomial",
+		"syntax": "\\binom{n}{k}"
+	},
+	{
+		"keyword": "square root",
+		"syntax": "\\sqrt[n]{} - n needed if n > 2"
+	},
+	{
+		"keyword": "Integral",
+		"syntax": "\\int_sub^\\sup (...) mathrm{d}x"
+	},
+	{
+		"keyword": "matrices",
+		"syntax": "\\[\n\\begin{matrix}\na & b & c \\\\\nd & e & f \\\\\ng & h & i\n\\end{matrix}\n\\]"
+	},
+	{
+		"keyword": "plus and minus",
+		"syntax": "\\pm or \\mp"
+	},
+	{
+		"keyword": "Greek Letters",
+		"syntax": "\\alpha, \\Alpha, \\beta, \\Beta, \\gamma, \\Gamma, \\pi, \\Pi, \\phi, \\varphi, \\mu, \\Phi"
+	}
+
+]
