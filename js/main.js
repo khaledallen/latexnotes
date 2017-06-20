@@ -1,14 +1,16 @@
-//Change doSomething function name later
+//Checks the latex input area and updates the rendered text area
+//every keyup or every time anything is changed
 
 const textArea = document.querySelector(".latex");
 const renderArea = document.querySelector(".rendered");
 
-textArea.addEventListener("onchange", doSomething);
-textArea.addEventListener("keyup", doSomething);
+textArea.addEventListener("onchange", renderText);
+textArea.addEventListener("keyup", renderText);
 
-function doSomething() {
+function renderText() {
   var theText = textArea.value;
   renderArea.innerHTML = theText;
+  MathJax.Hub.Queue(["Typeset",MathJax.Hub]);
 }
 
 const endpoint = "https://gist.githubusercontent.com/tstusr441/ea890ae6b7e9b1f67f4c8c504f395c3d/raw/12eac49825cf53e500b2c1fa6c7829a1e23c1608/.json";
