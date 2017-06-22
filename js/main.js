@@ -1,5 +1,13 @@
 //Checks the latex input area and updates the rendered text area
 //every keyup or every time anything is changed
+var editor;
+$( document ).ready(function() {
+    editor = ace.edit("editor");
+    editor.setTheme("ace/theme/clouds");
+    editor.session.setMode("ace/mode/latex");
+
+    editor.setOptions({ fontFamily: "Monospace", fontSize: "15pt" });
+});
 
 const textArea = document.querySelector(".latex");
 const renderArea = document.querySelector(".rendered");
@@ -9,7 +17,7 @@ textArea.addEventListener("keyup", renderText);
 textArea.addEventListener("keydown", showSearch);
 
 function renderText() {
-  var text = textArea.value;
+  var text = editor.getValue();
   text = text.replace(/\B\$\$/gm, `<span class="latex-wrap">$$$`);
   text = text.replace(/\b\$\$/gm, `$$$</span>`);
 
