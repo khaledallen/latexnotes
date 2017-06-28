@@ -21,7 +21,8 @@ function renderText() {
 function showSearch(e) {
   var x = e.key;
     if (x == "s" && e.ctrlKey) {
-      console.log("Trigger search");
+      var coordinates = getCaretCoordinates(this, this.selectionEnd);
+      console.log('(top, left) = (%s, %s)', coordinates.top, coordinates.left);
     }
 }
 
