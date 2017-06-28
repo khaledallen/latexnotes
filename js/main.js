@@ -5,13 +5,13 @@ const textArea = document.querySelector(".latex");
 const renderArea = document.querySelector(".rendered");
 
 //onchange doesn't work, keep change
-textArea.addEventListener("change", renderText);
+textArea.addEventListener("onchange", renderText);
 textArea.addEventListener("keyup", renderText);
 textArea.addEventListener("keydown", showSearch);
 
 function renderText() {
   var text = textArea.value;
-  text = text.replace(/\B\$\$/gm, `<span class="latex-wrap">$$$`);
+  text = text.replace(/\B\$\$/m, `<span class="latex-wrap">$$$`);
   text = text.replace(/\b\$\$/gm, `$$$</span>`);
 
   $(".rendered").html(text);
