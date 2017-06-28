@@ -4,8 +4,10 @@
 const textArea = document.querySelector(".latex");
 const renderArea = document.querySelector(".rendered");
 
-textArea.addEventListener("onchange", renderText);
+//onchange doesn't work, keep change
+textArea.addEventListener("change", renderText);
 textArea.addEventListener("keyup", renderText);
+textArea.addEventListener("keydown", showSearch);
 
 function renderText() {
   var text = textArea.value;
@@ -14,6 +16,13 @@ function renderText() {
 
   $(".rendered").html(text);
   MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+}
+
+function showSearch(e) {
+  var x = e.key;
+    if (x == "s" && e.ctrlKey) {
+      console.log("Trigger search");
+    }
 }
 
 const endpoint = "https://gist.githubusercontent.com/tstusr441/ea890ae6b7e9b1f67f4c8c504f395c3d/raw/12eac49825cf53e500b2c1fa6c7829a1e23c1608/.json";
