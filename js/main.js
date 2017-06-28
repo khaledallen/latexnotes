@@ -4,7 +4,8 @@
 const textArea = document.querySelector(".latex");
 const renderArea = document.querySelector(".rendered");
 
-textArea.addEventListener("onchange", renderText);
+//onchange doesn't work, keep change
+textArea.addEventListener("change", renderText);
 textArea.addEventListener("keyup", renderText);
 textArea.addEventListener("keydown", showSearch);
 
