@@ -18,6 +18,11 @@
   transform: perspective(100px) translateY(3px);
 }
 
+#search-form-wrapper {
+	display: none;
+	position: absolute;
+}
+
 .search-form {
   max-width: 400px;
   margin: 0 auto;
@@ -30,14 +35,8 @@
 }
 
 .wrapper {
-  margin-top: -10px;
-  height: 150px;
-  width: 100%;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-bottom: 30px;
-  background-color: #64b5f6;
-}
+  z-index: 999;
+  }
 
 .doc {
   padding-top: 10px;

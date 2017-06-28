@@ -3,6 +3,7 @@
 
 const textArea = document.querySelector(".latex");
 const renderArea = document.querySelector(".rendered");
+const searchBar = document.getElementById('search-form-wrapper');
 
 //onchange doesn't work, keep change
 textArea.addEventListener("onchange", renderText);
@@ -19,11 +20,14 @@ function renderText() {
 }
 
 function showSearch(e) {
-  var x = e.key;
-    if (x == "s" && e.ctrlKey) {
-      var coordinates = getCaretCoordinates(this, this.selectionEnd);
-      console.log('(top, left) = (%s, %s)', coordinates.top, coordinates.left);
-    }
+	var x = e.key;
+	if (x == "s" && e.ctrlKey) {
+	var coordinates = getCaretCoordinates(this, this.selectionEnd);
+	var topOffset = coordinates.top + this.getBoundingClientRect().top;
+	var leftOffset = coordinates.left + this.getBoundingClientRect().left;
+	var cssString = "display: block; top: " + topOffset + "px; left: " + leftOffset + "px;"; 
+	searchBar.setAttribute("style", cssString);
+}
 }
 
 const endpoint = "https://gist.githubusercontent.com/tstusr441/ea890ae6b7e9b1f67f4c8c504f395c3d/raw/12eac49825cf53e500b2c1fa6c7829a1e23c1608/.json";
