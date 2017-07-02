@@ -25,7 +25,7 @@ function showSearch(e) {
     }
 }
 
-const endpoint = "https://gist.githubusercontent.com/tstusr441/ea890ae6b7e9b1f67f4c8c504f395c3d/raw/12eac49825cf53e500b2c1fa6c7829a1e23c1608/.json";
+const endpoint = "https://gist.githubusercontent.com/awareness481/6c8fe0db7d3dd8f21fedc08811018677/raw/4938bbff8c87a68237b13b7c7dd600b728275227/v1.json";
 const syntax = [];
 
 var myHeaders = new Headers();
@@ -33,7 +33,8 @@ var myHeaders = new Headers();
 var myInit = {
   method: 'GET',
   headers: myHeaders,
-  mode: 'cors'
+  cache: "no-cache",
+  mode: "cors"
 };
 
 /*
@@ -48,7 +49,9 @@ fetch(endpoint, myInit)
 function findLatex(wordQuery, syntax) {
   return syntax.filter(math => {
     const regex = new RegExp(wordQuery, "gi");
-    return math.keyword.match(regex);
+    if (math.key == undefined)
+      return false;
+    return math.key.match(regex);
   });
 }
 
@@ -67,7 +70,7 @@ function matchResults() {
     return `
       <div class="elements">
       <li>
-        <span class="keyword">${math.keyword}</span>
+        <span class="keyword">${math.key}</span>
       </li>
       </div>
     `;
@@ -81,7 +84,7 @@ search.addEventListener("keyup", matchResults);
 
 $("ul").on("click", "li", function(e) {
   for (let i = 0; i < syntax.length; i++) {
-    if (e.target.innerText === syntax[i].keyword) {
+    if (e.target.innerText === syntax[i].key) {
       document.querySelector(".doc").innerHTML = `<code>${syntax[i].syntax}</code>`;
       results.innerHTML = "";
       break;
