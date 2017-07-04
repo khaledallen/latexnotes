@@ -25,7 +25,7 @@ function showSearch(e) {
     }
 }
 
-const endpoint = "https://gist.githubusercontent.com/awareness481/6c8fe0db7d3dd8f21fedc08811018677/raw/4938bbff8c87a68237b13b7c7dd600b728275227/v1.json";
+const endpoint = "https://gist.githubusercontent.com/awareness481/82e9a75a73602dd59d06c4696c1bfe0f/raw/1d35b515e2570733d7bacf50d64203930128c63a/v2.json";
 const syntax = [];
 
 var myHeaders = new Headers();
