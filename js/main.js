@@ -1,8 +1,12 @@
 //Checks the latex input area and updates the rendered text area
 //every keyup or every time anything is changed
-
 const textArea = document.querySelector(".latex");
 const renderArea = document.querySelector(".rendered");
+const searchBar = document.getElementById('search-form-wrapper');
+
+window.onload = function() {
+	textArea.focus();
+}
 
 //onchange doesn't work, keep change
 textArea.addEventListener("onchange", renderText);
@@ -19,10 +23,15 @@ function renderText() {
 }
 
 function showSearch(e) {
-  var x = e.key;
-    if (x == "s" && e.ctrlKey) {
-      console.log("Trigger search");
-    }
+	var x = e.key;
+	if (x == "s" && e.ctrlKey) {
+	var coordinates = getCaretCoordinates(this, this.selectionEnd);
+	var topOffset = coordinates.top + this.getBoundingClientRect().top;
+	var leftOffset = coordinates.left + this.getBoundingClientRect().left;
+	var cssString = "display: block; top: " + topOffset + "px; left: " + leftOffset + "px;"; 
+	searchBar.setAttribute("style", cssString);
+	document.querySelector(".search").focus();
+	}
 }
 
 const endpoint = "https://gist.githubusercontent.com/awareness481/82e9a75a73602dd59d06c4696c1bfe0f/raw/1d35b515e2570733d7bacf50d64203930128c63a/v2.json";
