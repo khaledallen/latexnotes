@@ -65,6 +65,10 @@ code {
   background: transparent;
 }
 
+.latex:focus {
+  outline: none;
+}
+
 .rendered {
   box-shadow: #c3c3c3 0px 2px 12px;
   height: 100vh;
