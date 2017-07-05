@@ -12,6 +12,7 @@ window.onload = function() {
 textArea.addEventListener("onchange", renderText);
 textArea.addEventListener("keyup", renderText);
 textArea.addEventListener("keydown", showSearch);
+searchBar.addEventListener("keydown", hideSearch);
 
 function renderText() {
   var text = textArea.value;
@@ -25,16 +26,26 @@ function renderText() {
 function showSearch(e) {
 	var x = e.key;
 	if (x == "s" && e.ctrlKey) {
-	var coordinates = getCaretCoordinates(this, this.selectionEnd);
-	var topOffset = coordinates.top + this.getBoundingClientRect().top;
-	var leftOffset = coordinates.left + this.getBoundingClientRect().left;
-	var cssString = "display: block; top: " + topOffset + "px; left: " + leftOffset + "px;"; 
-	searchBar.setAttribute("style", cssString);
-	document.querySelector(".search").focus();
+		if (getComputedStyle(searchBar, null).display == "none"){
+			var coordinates = getCaretCoordinates(this, this.selectionEnd);
+			var topOffset = coordinates.top + this.getBoundingClientRect().top;
+			var leftOffset = coordinates.left + this.getBoundingClientRect().left;
+			var cssString = "display: block; top: " + topOffset + "px; left: " + leftOffset + "px;"; 
+			searchBar.setAttribute("style", cssString);
+			document.querySelector(".search").focus();
+		}
 	}
 }
 
-const endpoint = "https://gist.githubusercontent.com/awareness481/82e9a75a73602dd59d06c4696c1bfe0f/raw/1d35b515e2570733d7bacf50d64203930128c63a/v2.json";
+function hideSearch(e) {
+	var x = e.key;
+	if ((x == "s" && e.ctrlKey) || e.keyCode === 27) {
+		searchBar.setAttribute("style", "display: none;");
+		textArea.focus();
+	}
+}
+
+	const endpoint = "https://gist.githubusercontent.com/awareness481/82e9a75a73602dd59d06c4696c1bfe0f/raw/1d35b515e2570733d7bacf50d64203930128c63a/v2.json";
 const syntax = [];
 
 var myHeaders = new Headers();
