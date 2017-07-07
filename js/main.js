@@ -53,7 +53,8 @@ function insertAtCursor(ins, field) {
 		let endPos = field.selectionEnd;
 
 		field.value = field.value.substring(0, startPos) + ins + field.value.substring(endPos, field.value.length);
-		field.selectionStart = endPos;
+		field.selectionStart = endPos + ins.length;
+		field.selectionEnd = endPos + ins.length;
 	} else {
 		field.value = ins;
 	}
