@@ -77,7 +77,7 @@ function findLatex(wordQuery, syntax) {
 var results = document.querySelector(".results");
 
 function matchResults(e) {
-if (e.keyCode != 13) {
+if (e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38) {
 	if (!this.value) {
 		results.innerHTML = ""; //This is to prevent results from popping up when search is empty
 		return 0;
@@ -101,7 +101,7 @@ if (e.keyCode != 13) {
 
 const search = document.querySelector(".search");
 search.addEventListener("change", matchResults);
-search.addEventListener("keypress", matchResults);
+search.addEventListener("keyup", matchResults);
 
 $(".search-form").submit(function(event) {
 	event.preventDefault();
