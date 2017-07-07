@@ -8,14 +8,19 @@ const search = document.querySelector(".search");
 search.addEventListener("change", matchResults);
 search.addEventListener("keyup", matchResults);
 
-window.onload = function() {
-	textArea.focus();
-}
-
 textArea.addEventListener("onchange", renderText);
 textArea.addEventListener("keyup", renderText);
 textArea.addEventListener("keydown", showSearch);
 searchBar.addEventListener("keydown", hideSearch);
+search.addEventListener("keydown", navigateResults);
+
+window.onload = function() {
+	textArea.focus();
+}
+
+$(".search-form").submit(function(event) {  //prevents the form refreshing the page when ENTER is typed
+	event.preventDefault();
+});
 
 function renderText() {
   var text = textArea.value;
@@ -60,26 +65,27 @@ function insertAtCursor(ins, field) {
 	}
 }
 
-$(search).keydown(function(e){
-	if (e.which == 40) {
-		var activeIndex = $(".active").index();
+function navigateResults(e){
+	var activeIndex = $(".active").index();
+	var next;
+
+	if (e.keyCode == 40) {
+		next = $("li").get(activeIndex + 1);
 		$(".results li").removeClass("active");
-		var next = $("li").get(activeIndex + 1);
 		$(next).addClass("active");
 	}
-	if (e.which == 38) {
-		var activeIndex = $(".active").index();
+	if (e.keyCode == 38) {
+		next = $("li").get(activeIndex - 1);
 		$(".results li").removeClass("active");
-		var next = $("li").get(activeIndex - 1);
 		$(next).addClass("active");
 	}
-	if (e.which == 13) {
+	if (e.keyCode == 13) {
 		let term = $("li").get(activeIndex);
 		term = $(".active .keyword").text();
 		insertAtCursor(term, textArea);
 		search.value = "";
 	}
-});
+}
 
 
 const endpoint = "https://gist.githubusercontent.com/awareness481/82e9a75a73602dd59d06c4696c1bfe0f/raw/1d35b515e2570733d7bacf50d64203930128c63a/v2.json";
@@ -135,12 +141,6 @@ if (e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38) { //Do nothing if ENT
 	$("li:first-of-type").addClass("active");
 	}
 }
-
-
-
-$(".search-form").submit(function(event) {
-	event.preventDefault();
-});
 
 $("ul").on("click", "li", function(e) {
   for (let i = 0; i < syntax.length; i++) {
