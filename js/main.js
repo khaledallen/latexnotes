@@ -8,7 +8,6 @@ window.onload = function() {
 	textArea.focus();
 }
 
-//onchange doesn't work, keep change
 textArea.addEventListener("onchange", renderText);
 textArea.addEventListener("keyup", renderText);
 textArea.addEventListener("keydown", showSearch);
@@ -39,13 +38,13 @@ function showSearch(e) {
 
 function hideSearch(e) {
 	var x = e.key;
-	if ((x == "s" && e.ctrlKey) || e.keyCode === 27) {
+	if ((x == "s" && e.ctrlKey) || e.keyCode === 27) { //if ctr-s or esc is pressed, hide searchBar
 		searchBar.setAttribute("style", "display: none;");
 		textArea.focus();
 	}
 }
 
-	const endpoint = "https://gist.githubusercontent.com/awareness481/82e9a75a73602dd59d06c4696c1bfe0f/raw/1d35b515e2570733d7bacf50d64203930128c63a/v2.json";
+const endpoint = "https://gist.githubusercontent.com/awareness481/82e9a75a73602dd59d06c4696c1bfe0f/raw/1d35b515e2570733d7bacf50d64203930128c63a/v2.json";
 const syntax = [];
 
 var myHeaders = new Headers();
@@ -88,19 +87,23 @@ function matchResults() {
   console.log(this.value);
   const html = resultsArray.map(math => {
     return `
-      <div class="elements">
       <li>
         <span class="keyword">${math.key}</span>
       </li>
-      </div>
     `;
   }).join('');
   results.innerHTML = html;
+$("li:first-of-type").addClass("active");
 }
+
 
 const search = document.querySelector(".search");
 search.addEventListener("change", matchResults);
 search.addEventListener("keyup", matchResults);
+
+$(".search-form").submit(function(event) {
+	event.preventDefault();
+});
 
 $("ul").on("click", "li", function(e) {
   for (let i = 0; i < syntax.length; i++) {

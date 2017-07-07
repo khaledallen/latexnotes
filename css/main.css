@@ -76,3 +76,7 @@ code {
   padding: 25px;
   font-family: Georgia, serif;
 }
+
+.results .active {
+	background-color: red;
+}
