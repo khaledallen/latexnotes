@@ -3,6 +3,10 @@
 const textArea = document.querySelector(".latex");
 const renderArea = document.querySelector(".rendered");
 const searchBar = document.getElementById('search-form-wrapper');
+const search = document.querySelector(".search");
+
+search.addEventListener("change", matchResults);
+search.addEventListener("keyup", matchResults);
 
 window.onload = function() {
 	textArea.focus();
@@ -23,26 +27,59 @@ function renderText() {
 }
 
 function showSearch(e) {
-	var x = e.key;
-	if (x == "s" && e.ctrlKey) {
+	if (e.key == "s" && e.ctrlKey) {
 		if (getComputedStyle(searchBar, null).display == "none"){
 			var coordinates = getCaretCoordinates(this, this.selectionEnd);
 			var topOffset = coordinates.top + this.getBoundingClientRect().top;
 			var leftOffset = coordinates.left + this.getBoundingClientRect().left;
-			var cssString = "display: block; top: " + topOffset + "px; left: " + leftOffset + "px;"; 
+			var cssString = "display: block; top: " + topOffset + "px; left: " + leftOffset + "px;";
 			searchBar.setAttribute("style", cssString);
-			document.querySelector(".search").focus();
+			search.focus();
 		}
 	}
 }
 
 function hideSearch(e) {
-	var x = e.key;
-	if ((x == "s" && e.ctrlKey) || e.keyCode === 27 || e.keyCode === 13) { //if ctr-s or esc is pressed, hide searchBar
+	if ((e.key == "s" && e.ctrlKey) || e.keyCode == 27 || e.keyCode == 13) { //if ctr-s or esc or enter is pressed, hide searchBar
 		searchBar.setAttribute("style", "display: none;");
 		textArea.focus();
+		e.preventDefault();
 	}
 }
+
+function insertAtCursor(ins, field) {
+	if(field.selectionStart){
+		let startPos = field.selectionStart;
+		let endPos = field.selectionEnd;
+
+		field.value = field.value.substring(0, startPos) + ins + field.value.substring(endPos, field.value.length);
+		field.selectionStart = endPos;
+	} else {
+		field.value = ins;
+	}
+}
+
+$(search).keydown(function(e){
+	if (e.which == 40) {
+		var activeIndex = $(".active").index();
+		$(".results li").removeClass("active");
+		var next = $("li").get(activeIndex + 1);
+		$(next).addClass("active");
+	}
+	if (e.which == 38) {
+		var activeIndex = $(".active").index();
+		$(".results li").removeClass("active");
+		var next = $("li").get(activeIndex - 1);
+		$(next).addClass("active");
+	}
+	if (e.which == 13) {
+		let term = $("li").get(activeIndex);
+		term = $(".active .keyword").text();
+		insertAtCursor(term, textArea);
+		search.value = "";
+	}
+});
+
 
 const endpoint = "https://gist.githubusercontent.com/awareness481/82e9a75a73602dd59d06c4696c1bfe0f/raw/1d35b515e2570733d7bacf50d64203930128c63a/v2.json";
 const syntax = [];
@@ -77,7 +114,7 @@ function findLatex(wordQuery, syntax) {
 var results = document.querySelector(".results");
 
 function matchResults(e) {
-if (e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38) {
+if (e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38) { //Do nothing if ENTER, UP, or DOWN are pressed
 	if (!this.value) {
 		results.innerHTML = ""; //This is to prevent results from popping up when search is empty
 		return 0;
@@ -99,9 +136,6 @@ if (e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38) {
 }
 
 
-const search = document.querySelector(".search");
-search.addEventListener("change", matchResults);
-search.addEventListener("keyup", matchResults);
 
 $(".search-form").submit(function(event) {
 	event.preventDefault();
@@ -115,25 +149,4 @@ $("ul").on("click", "li", function(e) {
       break;
     }
   }
-});
-
-$(search).keydown(function(e){
-	if (e.which == 40) { 
-		var activeIndex = $(".active").index();
-		$(".results li").removeClass("active");
-		var next = $("li").get(activeIndex + 1);
-		$(next).addClass("active");
-	}
-	if (e.which == 38) {
-		var activeIndex = $(".active").index();
-		$(".results li").removeClass("active");
-		var next = $("li").get(activeIndex - 1);
-		$(next).addClass("active");
-	}
-	if (e.which == 13) {
-		let term = $("li").get(activeIndex);
-		term = $(".active .keyword").text();
-		let content = textArea.value;
-		textArea.value = content + term; //the ENTER gets put into the textarea too, need to fix that
-	}
 });

@@ -504,7 +504,7 @@
         "desc": " — same as \n"
     },
     {
-        "key": "\\begin{displaymath} ",
+        "key": "\\begin{displaymath}",
         "desc": "r $$.            \n"
     },
     {
