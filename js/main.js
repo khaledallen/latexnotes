@@ -93,13 +93,14 @@ function matchResults() {
     `;
   }).join('');
   results.innerHTML = html;
-$("li:first-of-type").addClass("active");
+
+  $("li:first-of-type").addClass("active");
 }
 
 
 const search = document.querySelector(".search");
 search.addEventListener("change", matchResults);
-search.addEventListener("keyup", matchResults);
+search.addEventListener("keypress", matchResults);
 
 $(".search-form").submit(function(event) {
 	event.preventDefault();
@@ -113,4 +114,19 @@ $("ul").on("click", "li", function(e) {
       break;
     }
   }
+});
+
+$(search).keydown(function(e){
+	if (e.which == 40) { 
+		var activeIndex = $(".active").index();
+		$(".results li").removeClass("active");
+		var next = $("li").get(activeIndex + 1);
+		$(next).addClass("active");
+	}
+	if (e.which == 38) {
+		var activeIndex = $(".active").index();
+		$(".results li").removeClass("active");
+		var next = $("li").get(activeIndex - 1);
+		$(next).addClass("active");
+	}
 });
