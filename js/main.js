@@ -38,7 +38,7 @@ function showSearch(e) {
 
 function hideSearch(e) {
 	var x = e.key;
-	if ((x == "s" && e.ctrlKey) || e.keyCode === 27) { //if ctr-s or esc is pressed, hide searchBar
+	if ((x == "s" && e.ctrlKey) || e.keyCode === 27 || e.keyCode === 13) { //if ctr-s or esc is pressed, hide searchBar
 		searchBar.setAttribute("style", "display: none;");
 		textArea.focus();
 	}
@@ -76,25 +76,26 @@ function findLatex(wordQuery, syntax) {
 
 var results = document.querySelector(".results");
 
-function matchResults() {
+function matchResults(e) {
+if (e.keyCode != 13) {
+	if (!this.value) {
+		results.innerHTML = ""; //This is to prevent results from popping up when search is empty
+		return 0;
+	}
 
-  if (!this.value) {
-    results.innerHTML = ""; //This is to prevent results from popping up when search is empty
-    return 0;
-  }
+	const resultsArray = findLatex(this.value, syntax);
+	console.log(this.value);
+	const html = resultsArray.map(math => {
+		return `
+			<li>
+			<span class="keyword">${math.key}</span>
+			</li>
+			`;
+	}).join('');
+	results.innerHTML = html;
 
-  const resultsArray = findLatex(this.value, syntax);
-  console.log(this.value);
-  const html = resultsArray.map(math => {
-    return `
-      <li>
-        <span class="keyword">${math.key}</span>
-      </li>
-    `;
-  }).join('');
-  results.innerHTML = html;
-
-  $("li:first-of-type").addClass("active");
+	$("li:first-of-type").addClass("active");
+	}
 }
 
 
@@ -128,5 +129,11 @@ $(search).keydown(function(e){
 		$(".results li").removeClass("active");
 		var next = $("li").get(activeIndex - 1);
 		$(next).addClass("active");
+	}
+	if (e.which == 13) {
+		let term = $("li").get(activeIndex);
+		term = $(".active .keyword").text();
+		let content = textArea.value;
+		textArea.value = content + term;
 	}
 });
