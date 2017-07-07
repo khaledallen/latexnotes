@@ -134,6 +134,6 @@ $(search).keydown(function(e){
 		let term = $("li").get(activeIndex);
 		term = $(".active .keyword").text();
 		let content = textArea.value;
-		textArea.value = content + term;
+		textArea.value = content + term; //the ENTER gets put into the textarea too, need to fix that
 	}
 });
