@@ -26,25 +26,25 @@ function renderText() {
   var text = textArea.value;
   text = text.replace(/\B\$\$/m, `<span class="latex-wrap">$$$`);
   text = text.replace(/\b\$\$/gm, `$$$</span>`);
-
+	// Headers
 	text = markdown(text, '^#{4}(.*)','h4');
 	text = markdown(text, '^#{3}(.*)','h3');
 	text = markdown(text, '^#{2}(.*)','h2');
 	text = markdown(text, '^#(.*)','h1');
-
+	// Emphasis and Bolding
 	text = markdown(text, '\\*{2}(.*)\\*{2}','strong');
 	text = markdown(text, '\\*(.*)\\*','em');
-
+	// Code blocks
 	text = markdown(text, '\\`{3}(.*)\\`{3}','pre');
 	text = markdown(text, '\\`(.*)\\`','tt');
-
+	// Lists
 	text = markdown(text, '((\\d\\.\\s.*\\n)+)','ol');
 	text = markdown(text, '((\\*\\.\\s.*\\n)+)','ul');
 	text = markdown(text, '((-\\.\\s.*\\n)+)','ul');
 	text = markdown(text, '\\d\\.\\s(.*\\n)','li');
 	text = markdown(text, '\\*\\s(.*\\n)','li');
 	text = markdown(text, '-\\s(.*\\n)','li');
-
+	// Line Breaks
 	text = text.replace(/\n/gm, `<br>`);
 	text = text.replace(/\r/gm, `<br>`);
 

@@ -26,32 +26,16 @@
 .search-form {
   max-width: 400px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 
 .search {
-  margin-top: 30px;
-  font-size: 30px;
+  margin-top: 20px;
+  font-size: 19px;
 }
 
 .wrapper {
   z-index: 999;
-}
-
-.doc {
-  padding-top: 10px;
-  text-align: center;
-  white-space: pre-wrap;
-  white-space: -moz-pre-wrap;
-  white-space: -o-pre-wrap;
-  word-wrap: break-word;
-}
-
-code {
-  background-color: white;
-  padding: 20px 20px 20px 20px;
-  font-family: Courier, 'New Courier', monospace;
-  font-size: 16px;
 }
 
 .latex {
@@ -77,10 +61,11 @@ code {
   font-family: Georgia, serif;
 }
 
-.desc.style {
-  border: 2px solid;
+.desc {
+  border: 1px solid #dadada;
   border-radius: 5px;
   width: 70%;
+  padding: 2px 5px;
 }
 
 .keyword {
