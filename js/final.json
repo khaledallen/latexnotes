@@ -2,7 +2,7 @@
     {
         "key": "\\frac{num}{den}",
         "description": "Create a fraction. The num stands for numerator and den for denominator",
-        "image": "img/fractions.svg"
+        "image": "img/svg/fractions.svg"
     },
     {
         "key": "\\dfrac{num}{den}",
@@ -11,12 +11,12 @@
     {
         "key": "\\sqrt[n]{x}",
         "description": "The mathematical symbol for square roots. Omit the '[n]' if you just want the square root. Otherwise use it to specify the nth root",
-        "image": "img/sqrt.svg"
+        "image": "img/svg/sqrt.svg"
     },
     {
         "key": "\\sum_{i=m}^{n}",
         "description": "Use this for sums (or summation). It uses the summation symbol Σ.",
-        "image": "img/sum.svg"
+        "image": "img/svg/sum.svg"
     },
     {
         "key": "\\prod_{n=1}^5",
@@ -25,42 +25,42 @@
     {
         "key": "\\lim_{x\\to\\n}",
         "description": "Produces a limit. Use x\\to\\n to specify where the value of x tends",
-        "image": "img/limit.svg"
+        "image": "img/svg/limit.svg"
     },
     {
         "key": "\\log_n x^2",
         "description": "Produces a logarithm. Use n to specify the base. For natular logarithms use \\ln",
-        "image": "img/logarithm.svg"
+        "image": "img/svg/logarithm.svg"
     },
     {
         "key": "\\ln x",
         "description": "Natular logarithm. ln has a base e",
-        "image": "img/ln.svg"
+        "image": "img/svg/ln.svg"
     },
     {
         "key": "\\binom{n}{k}",
         "description": "Creates a binomial coefficient in the form of 'n choose k'",
-        "image": "img/binom.svg"
+        "image": "img/svg/binom.svg"
     },
     {
         "key": "\\cos x",
         "description": "Trigonometric function cos (cosine)",
-        "image": "img/cos.svg"
+        "image": "img/svg/cos.svg"
     },
     {
         "key": "\\sin x",
         "description": "Trigonometric function sin (sine)",
-        "image": "img/sin.svg"
+        "image": "img/svg/sin.svg"
     },
     {
         "key": "\\tan x",
         "description": "Trigonometric function tan (tangent)",
-        "image": "img/tan.svg"
+        "image": "img/svg/tan.svg"
     },
     {
         "key": "\\sec x",
         "description": "Trigonometric function sec (secant)",
-        "image": "img/sec.svg"
+        "image": "img/svg/sec.svg"
     },
     {
         "key": "\\cot x",
@@ -73,27 +73,27 @@
     {
         "key": "\\arccos x",
         "description": "The inverse trigonometric function of cos, arccos (arcosine)",
-        "image": "img/arccos.svg"
+        "image": "img/svg/arccos.svg"
     },
     {
         "key": "\\arcsin x",
         "description": "The inverse trigonometric function of sin, arcsin (arcsine)",
-        "image": "img/arcsin.svg"
+        "image": "img/svg/arcsin.svg"
     },
     {
         "key": "\\arctan x",
         "description": "The inverse trigonometric function of tan, arctan (arctangent)",
-        "image": "img/arctan.svg"
+        "image": "img/svg/arctan.svg"
     },
     {
         "key": "\\frac{d}{dx}\\left(x^2\\right) = 2x",
         "description": "The Leibniz notation for the derivative in Calculus",
-        "image": "img/derivative.svg"
+        "image": "img/svg/derivative.svg"
     },
     {
         "key": "\\int 2x\\,dx = x^2+C",
         "description": "The command to create an integral",
-        "image": "img/integral.svg"
+        "image": "img/svg/integral.svg"
     },
     {
         "key": "\\alpha",
