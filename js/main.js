@@ -16,7 +16,7 @@ search.addEventListener("keydown", navigateResults);
 
 window.onload = function() {
 	textArea.focus();
-}
+};
 
 $(".search-form").submit(function(event) {  //prevents the form refreshing the page when ENTER is typed
 	event.preventDefault();
@@ -33,7 +33,7 @@ function renderText() {
 
 function showSearch(e) {
 	if (e.key == "s" && e.ctrlKey) {
-		if (getComputedStyle(searchBar, null).display == "none"){
+		if (getComputedStyle(searchBar, null).display == "none") {
 			var coordinates = getCaretCoordinates(this, this.selectionEnd);
 			var topOffset = coordinates.top + this.getBoundingClientRect().top;
 			var leftOffset = coordinates.left + this.getBoundingClientRect().left;
@@ -88,7 +88,9 @@ function navigateResults(e){
 }
 
 
-const endpoint = "https://gist.githubusercontent.com/awareness481/82e9a75a73602dd59d06c4696c1bfe0f/raw/1d35b515e2570733d7bacf50d64203930128c63a/v2.json";
+const endpoint = "https://gist.githubusercontent.com/awareness481/"
+									+ "a1be0fb9b3a91eb78b6a4c1805da1f9f/raw/0512a07d86"
+									+ "ccf5e4ff8e2791d1b68c2da47e0566/l.json";
 const syntax = [];
 
 var myHeaders = new Headers();
@@ -112,9 +114,8 @@ fetch(endpoint, myInit)
 function findLatex(wordQuery, syntax) {
   return syntax.filter(math => {
     const regex = new RegExp(wordQuery, "gi");
-    if (math.key == undefined)
-      return false;
-    return math.key.match(regex);
+    if (math.key.match(regex) || math.description.match(regex))
+			return true;
   });
 }
 
@@ -126,6 +127,7 @@ if (e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38) { //Do nothing if ENT
 		results.innerHTML = ""; //This is to prevent results from popping up when search is empty
 		return 0;
 	}
+}
 
 	const resultsArray = findLatex(this.value, syntax);
 	console.log(this.value);
@@ -133,13 +135,18 @@ if (e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38) { //Do nothing if ENT
 		return `
 			<li>
 			<span class="keyword">${math.key}</span>
+			<span class="desc">${math.description}</span>
 			</li>
 			`;
 	}).join('');
 	results.innerHTML = html;
 
 	$("li:first-of-type").addClass("active");
-	}
+	//description css
+	// Doesnt work as of yet
+	// const node = document.querySelectorAll(".desc");
+	// const desc = Array.from(node);
+	// desc.forEach(box => box.classList.add("style"));
 }
 
 $("ul").on("click", "li", function(e) {
