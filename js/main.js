@@ -133,7 +133,7 @@ if (e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38) { //Do nothing if ENT
 	console.log(this.value);
 	const html = resultsArray.map(math => {
 		return `
-			<li>
+			<li class="list-group-item>
 			<span class="keyword">${math.key}</span>
 			<span class="desc">${math.description}</span>
 			</li>
