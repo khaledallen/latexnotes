@@ -133,7 +133,7 @@ if (e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38) { //Do nothing if ENT
 	console.log(this.value);
 	const html = resultsArray.map(math => {
 		return `
-			<li>
+			<li class="list-group-item">
 			<span class="keyword">${math.key}</span>
 			<span class="desc">${math.description}</span>
 			</li>
@@ -144,9 +144,9 @@ if (e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38) { //Do nothing if ENT
 	$("li:first-of-type").addClass("active");
 	//description css
 	// Doesnt work as of yet
-	// const node = document.querySelectorAll(".desc");
-	// const desc = Array.from(node);
-	// desc.forEach(box => box.classList.add("style"));
+	 const node = document.querySelectorAll(".desc");
+	 const desc = Array.from(node);
+	 desc.forEach(box => box.classList.add("style"));
 }
 }
 

@@ -2,21 +2,21 @@
   margin: 0;
   padding: 0;
   position: relative;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
 .results li {
   background: white;
   list-style: none;
-  padding: 20px;
+  padding: 3px 5px;
   border-bottom: 1px solid #131619;
   display: flex;
   transition: background 0.5s;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
-.results li:nth-child(even) {
+/*.results li:nth-child(even) {
   transform: perspective(100px) translateY(3px);
-}
+} /*why is this here?*/
 
 #search-form-wrapper {
 	display: none;
@@ -36,7 +36,7 @@
 
 .wrapper {
   z-index: 999;
-  }
+}
 
 .doc {
   padding-top: 10px;
@@ -77,12 +77,13 @@ code {
   font-family: Georgia, serif;
 }
 
-.results .active {
-	background-color: red;
+.desc.style {
+  border: 2px solid;
+  border-radius: 5px;
+  width: 70%;
 }
 
-.desc .style {
-  box-sizing: padding-box;
-  border: 2px;
-  border-radius: 5px;
+.keyword {
+  width: 25%;
+  margin-right: 5%;
 }
