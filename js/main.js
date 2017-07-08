@@ -32,7 +32,7 @@ function renderText() {
 }
 
 function showSearch(e) {
-	if (e.key == "s" && e.ctrlKey) {
+	if (e.key == "m" && e.ctrlKey) {
 		if (getComputedStyle(searchBar, null).display == "none") {
 			var coordinates = getCaretCoordinates(this, this.selectionEnd);
 			var topOffset = coordinates.top + this.getBoundingClientRect().top;
@@ -45,7 +45,7 @@ function showSearch(e) {
 }
 
 function hideSearch(e) {
-	if ((e.key == "s" && e.ctrlKey) || e.keyCode == 27 || e.keyCode == 13) { //if ctr-s or esc or enter is pressed, hide searchBar
+	if ((e.key == "m" && e.ctrlKey) || e.keyCode == 27 || e.keyCode == 13) { //if ctr-s or esc or enter is pressed, hide searchBar
 		searchBar.setAttribute("style", "display: none;");
 		textArea.focus();
 		e.preventDefault();
