@@ -16,7 +16,7 @@ search.addEventListener("keydown", navigateResults);
 
 window.onload = function() {
 	textArea.focus();
-}
+};
 
 $(".search-form").submit(function(event) {  //prevents the form refreshing the page when ENTER is typed
 	event.preventDefault();
@@ -88,7 +88,9 @@ function navigateResults(e){
 }
 
 
-const endpoint = "https://gist.githubusercontent.com/awareness481/82e9a75a73602dd59d06c4696c1bfe0f/raw/1d35b515e2570733d7bacf50d64203930128c63a/v2.json";
+const endpoint = "https://gist.githubusercontent.com/awareness481/"
+									+ "a1be0fb9b3a91eb78b6a4c1805da1f9f/raw/0512a07d86"
+									+ "ccf5e4ff8e2791d1b68c2da47e0566/l.json";
 const syntax = [];
 
 var myHeaders = new Headers();
