@@ -33,7 +33,7 @@ function renderText() {
 
 function showSearch(e) {
 	if (e.key == "s" && e.ctrlKey) {
-		if (getComputedStyle(searchBar, null).display == "none"){
+		if (getComputedStyle(searchBar, null).display == "none") {
 			var coordinates = getCaretCoordinates(this, this.selectionEnd);
 			var topOffset = coordinates.top + this.getBoundingClientRect().top;
 			var leftOffset = coordinates.left + this.getBoundingClientRect().left;
@@ -114,9 +114,8 @@ fetch(endpoint, myInit)
 function findLatex(wordQuery, syntax) {
   return syntax.filter(math => {
     const regex = new RegExp(wordQuery, "gi");
-    if (math.key == undefined)
-      return false;
-    return math.key.match(regex);
+    if (math.key.match(regex) || math.description.match(regex))
+			return true;
   });
 }
 
@@ -128,6 +127,7 @@ if (e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38) { //Do nothing if ENT
 		results.innerHTML = ""; //This is to prevent results from popping up when search is empty
 		return 0;
 	}
+}
 
 	const resultsArray = findLatex(this.value, syntax);
 	console.log(this.value);
@@ -135,13 +135,18 @@ if (e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38) { //Do nothing if ENT
 		return `
 			<li>
 			<span class="keyword">${math.key}</span>
+			<span class="desc">${math.description}</span>
 			</li>
 			`;
 	}).join('');
 	results.innerHTML = html;
 
 	$("li:first-of-type").addClass("active");
-	}
+	//description css
+	// Doesnt work as of yet
+	// const node = document.querySelectorAll(".desc");
+	// const desc = Array.from(node);
+	// desc.forEach(box => box.classList.add("style"));
 }
 
 $("ul").on("click", "li", function(e) {
