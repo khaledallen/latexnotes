@@ -27,8 +27,44 @@ function renderText() {
   text = text.replace(/\B\$\$/m, `<span class="latex-wrap">$$$`);
   text = text.replace(/\b\$\$/gm, `$$$</span>`);
 
+	text = markdown(text, '^#{4}(.*)','h4');
+	text = markdown(text, '^#{3}(.*)','h3');
+	text = markdown(text, '^#{2}(.*)','h2');
+	text = markdown(text, '^#(.*)','h1');
+
+	text = markdown(text, '\\*{2}(.*)\\*{2}','strong');
+	text = markdown(text, '\\*(.*)\\*','em');
+
+	text = markdown(text, '\\`{3}(.*)\\`{3}','pre');
+	text = markdown(text, '\\`(.*)\\`','tt');
+
+	text = markdown(text, '((\\d\\.\\s.*\\n)+)','ol');
+	text = markdown(text, '((\\*\\.\\s.*\\n)+)','ul');
+	text = markdown(text, '((-\\.\\s.*\\n)+)','ul');
+	text = markdown(text, '\\d\\.\\s(.*\\n)','li');
+	text = markdown(text, '\\*\\s(.*\\n)','li');
+	text = markdown(text, '-\\s(.*\\n)','li');
+
+	text = text.replace(/\n/gm, `<br>`);
+	text = text.replace(/\r/gm, `<br>`);
+
   $(".rendered").html(text);
   MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+}
+
+/* Function: Markdown
+ * Arguments: text - the text to be modified
+ *					  ex	 - the regex to match
+ *					  tag  - the HTML tag to use
+ * Returns: The text with anything inside the Regex matches
+  * 				wrapped by the specified HTML tags
+ * TODO: Create a JSON object with all the markdown syntax and tags
+*/
+
+function markdown(text, ex, tag) {
+	var regex = new RegExp(ex, 'gm');
+	var subst = '<' + tag + '>$1</' + tag + '>';
+	return text.replace(regex, subst);
 }
 
 function showSearch(e) {
