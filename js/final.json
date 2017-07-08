@@ -1,7 +1,8 @@
 [
     {
         "key": "\\frac{num}{den}",
-        "description": "Create a fraction. The num stands for numerator and den for denominator"
+        "description": "Create a fraction. The num stands for numerator and den for denominator",
+        "image": "img/fractions.svg"
     },
     {
         "key": "\\dfrac{num}{den}",
@@ -9,11 +10,13 @@
     },
     {
         "key": "\\sqrt[n]{x}",
-        "description": "The mathematical symbol for square roots. Omit the '[n]' if you just want the square root. Otherwise use it to specify the nth root"
+        "description": "The mathematical symbol for square roots. Omit the '[n]' if you just want the square root. Otherwise use it to specify the nth root",
+        "image": "img/sqrt.svg"
     },
     {
         "key": "\\sum_{i=m}^{n}",
-        "description": "Use this for sums (or summation). It uses the summation symbol Σ."
+        "description": "Use this for sums (or summation). It uses the summation symbol Σ.",
+        "image": "img/sum.svg"
     },
     {
         "key": "\\prod_{n=1}^5",
@@ -21,35 +24,43 @@
     },
     {
         "key": "\\lim_{x\\to\\n}",
-        "description": "Produces a limit. Use x\\to\\n to specify where the value of x tends"
+        "description": "Produces a limit. Use x\\to\\n to specify where the value of x tends",
+        "image": "img/limit.svg"
     },
     {
         "key": "\\log_n x^2",
-        "description": "Produces a logarithm. Use n to specify the base. For natular logarithms use \\ln"
+        "description": "Produces a logarithm. Use n to specify the base. For natular logarithms use \\ln",
+        "image": "img/logarithm.svg"
     },
     {
         "key": "\\ln x",
-        "description": "Natular logarithm. ln has a base e"
+        "description": "Natular logarithm. ln has a base e",
+        "image": "img/ln.svg"
     },
     {
         "key": "\\binom{n}{k}",
-        "description": "Creates a binomial coefficient in the form of 'n choose k'"
+        "description": "Creates a binomial coefficient in the form of 'n choose k'",
+        "image": "img/binom.svg"
     },
     {
         "key": "\\cos x",
-        "description": "Trigonometric function cos (cosine)"
+        "description": "Trigonometric function cos (cosine)",
+        "image": "img/cos.svg"
     },
     {
         "key": "\\sin x",
-        "description": "Trigonometric function sin (sine)"
+        "description": "Trigonometric function sin (sine)",
+        "image": "img/sin.svg"
     },
     {
         "key": "\\tan x",
-        "description": "Trigonometric function tan (tangent)"
+        "description": "Trigonometric function tan (tangent)",
+        "image": "img/tan.svg"
     },
     {
         "key": "\\sec x",
-        "description": "Trigonometric function sec (secant)"
+        "description": "Trigonometric function sec (secant)",
+        "image": "img/sec.svg"
     },
     {
         "key": "\\cot x",
@@ -61,119 +72,124 @@
     },
     {
         "key": "\\arccos x",
-        "description": "The inverse trigonometric function of cos, arccos (arcosine)"
+        "description": "The inverse trigonometric function of cos, arccos (arcosine)",
+        "image": "img/arccos.svg"
     },
     {
         "key": "\\arcsin x",
-        "description": "The inverse trigonometric function of sin, arcsin (arcsine)"
+        "description": "The inverse trigonometric function of sin, arcsin (arcsine)",
+        "image": "img/arcsin.svg"
     },
     {
         "key": "\\arctan x",
-        "description": "The inverse trigonometric function of tan, arctan (arctangent)"
+        "description": "The inverse trigonometric function of tan, arctan (arctangent)",
+        "image": "img/arctan.svg"
     },
     {
         "key": "\\frac{d}{dx}\\left(x^2\\right) = 2x",
-        "description": "The Leibniz notation for the derivative in Calculus"
+        "description": "The Leibniz notation for the derivative in Calculus",
+        "image": "img/derivative.svg"
     },
     {
         "key": "\\int 2x\\,dx = x^2+C",
-        "description": "The command to create an integral"
+        "description": "The command to create an integral",
+        "image": "img/integral.svg"
     },
     {
         "key": "\\alpha",
-        "description": "Greek letter for α \u0001\n"
+        "description": "Greek letter for α"
     },
     {
         "key": "\\beta",
-        "description": "Greek letter for β\n"
+        "description": "Greek letter for β"
     },
     {
         "key": "\\gamma",
-        "description": "Greek letter for γ\n"
+        "description": "Greek letter for γ"
     },
     {
         "key": "\\delta",
-        "description": "Greek letter for δ\n"
+        "description": "Greek letter for δ"
     },
     {
         "key": "\\varepsilon",
-        "description": "Greek letter for ε\n"
+        "description": "Greek letter for ε"
     },
     {
         "key": "\\zeta",
-        "description": "Greek letter for ζ\n"
+        "description": "Greek letter for ζ"
     },
     {
         "key": "\\eta",
-        "description": "Greek letter for η\b\n"
+        "description": "Greek letter for η"
     },
     {
         "key": "\\theta",
-        "description": "Greek letter for θ\n"
+        "description": "Greek letter for θ"
     },
     {
         "key": "\\iota",
-        "description": "Greek letter for ι\n"
+        "description": "Greek letter for ι"
     },
     {
         "key": "\\kappa",
-        "description": "Greek letter for κ\f\n"
+        "description": "Greek letter for κ"
     },
     {
         "key": "\\lambda",
-        "description": "Greek letter for λ\n"
+        "description": "Greek letter for λ"
     },
     {
         "key": "\\mu",
-        "description": "Greek letter for μ\n"
+        "description": "Greek letter for μ"
     },
     {
         "key": "\\nu",
-        "description": "Greek letter for νι\n"
+        "description": "Greek letter for ν"
     },
     {
         "key": "\\xi",
-        "description": "Greek letter for χι\u0010\n"
+        "description": "Greek letter for χ"
     },
     {
         "key": "o",
-        "description": "Greek letter for Ο\n"
+        "description": "Greek letter for Ο"
     },
     {
         "key": "\\pi",
-        "description": "Greek letter for π\n"
+        "description": "Greek letter for π"
     },
     {
         "key": "\\rho",
-        "description": "Greek letter for ρ\u0014\n"
+        "description": "Greek letter for ρ"
     },
     {
         "key": "\\sigma",
-        "description": "Greek letter for σ\n"
+        "description": "Greek letter for σ"
     },
     {
         "key": "\\tau",
-        "description": "Greek letter for τ\u0018\n"
+        "description": "Greek letter for τ"
     },
     {
         "key": "\\upsilon",
-        "description": "Greek letter for υ\n"
+        "description": "Greek letter for υ"
     },
     {
         "key": "\\phi",
-        "description": "Greek letter for φ\n"
+        "description": "Greek letter for φ"
     },
     {
         "key": "\\chi",
-        "description": "Greek letter for χ\n"
+        "description": "Greek letter for χ"
     },
     {
         "key": "\\psi",
-        "description": "Greek letter for \u001dψ\n"
+        "description": "Greek letter for ψ"
     },
     {
         "key": "\\omega",
-        "description": "Greek letter for ω\u001e\n"
+        "description": "Greek letter for ω"
     },
     {
         "key": "\\leq",
