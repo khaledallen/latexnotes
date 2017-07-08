@@ -127,13 +127,13 @@ if (e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38) { //Do nothing if ENT
 		results.innerHTML = ""; //This is to prevent results from popping up when search is empty
 		return 0;
 	}
-}
+
 
 	const resultsArray = findLatex(this.value, syntax);
 	console.log(this.value);
 	const html = resultsArray.map(math => {
 		return `
-			<li class="list-group-item>
+			<li>
 			<span class="keyword">${math.key}</span>
 			<span class="desc">${math.description}</span>
 			</li>
@@ -147,6 +147,7 @@ if (e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38) { //Do nothing if ENT
 	// const node = document.querySelectorAll(".desc");
 	// const desc = Array.from(node);
 	// desc.forEach(box => box.classList.add("style"));
+}
 }
 
 $("ul").on("click", "li", function(e) {
