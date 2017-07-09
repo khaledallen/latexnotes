@@ -87,3 +87,12 @@ h3 {
   align-items: stretch;
   align-content: center;
 }
+
+.flex-ch {
+  flex-basis: 45%;
+}
+
+.latex-ref {
+  font-size: 20px;
+  text-align: left;
+}
