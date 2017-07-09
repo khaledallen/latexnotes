@@ -1,17 +1,114 @@
+/* Start Navbar Styling */
+
+nav {
+  position: relative;
+  z-index: 1;
+  top:0;
+
+  width: 100%;
+
+  transition:all 0.5s;
+
+  background-color: #0277bd;
+}
+
+nav ul {
+  display:flex;
+
+  margin: 0;
+  padding:0;
+
+  list-style: none;
+}
+
+.link-wrapper {
+  display: flex;
+
+  text-align: right;
+
+  flex: 2;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+
+.brand {
+  display: flex;
+
+  text-align: left;
+
+  flex: 1;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+nav a {
+  display: inline-block;
+
+  padding:20px;
+
+  transition:all 0.2s;
+  text-transform: uppercase;
+
+  color:white;
+}
+
+.links a {
+  text-decoration: none;
+}
+
+.brand a {
+  text-decoration: none;
+}
+
+.brand {
+  font-size: 20px;
+}
+
+nav li {
+    margin: 20px 10px 20px 10px;
+}
+
+nav li a:visited{
+  color: #ffffff;
+}
+
+.navbox {
+  border:1px solid #ffffff;
+}
+
+.navbox:hover {
+  border:1px solid #0277bd;
+  background-color: #ffffff;
+  color: #0277bd;
+
+ -webkit-box-shadow:0px 0px 3px 1px #0277bd ;
+ -moz-box-shadow:0px 0px 3px 1px #0277bd ;
+ box-shadow:0px 0px 3px 1px #0277bd ;
+}
+
+/* END Navbar styling */
+
 .results {
+  position: relative;
+
   margin: 0;
   padding: 0;
-  position: relative;
+
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
 }
 
 .results li {
-  background: white;
-  list-style: none;
-  padding: 3px 5px;
-  border-bottom: 1px solid #131619;
   display: flex;
+
+  padding: 3px 5px;
+
+  list-style: none;
+
   transition: background 0.5s;
+
+  border-bottom: 1px solid #131619;
+  background: white;
 }
 
 /*.results li:nth-child(even) {
@@ -19,18 +116,21 @@
 } /*why is this here?*/
 
 #search-form-wrapper {
-	display: none;
 	position: absolute;
+
+	display: none;
 }
 
 .search-form {
   max-width: 400px;
   margin: 0 auto;
+
   text-align: left;
 }
 
 .search {
   margin-top: 20px;
+
   font-size: 19px;
 }
 
@@ -41,12 +141,15 @@
 .latex {
   width: 100%;
   height: 100vh;
+  padding: 10px;
+
   resize: none;
+
+  border: none;
+  background: transparent;
+
   font-family: Courier, 'New Courier', monospace;
   font-size: 1.1em;
-  border: none;
-  padding: 10px;
-  background: transparent;
 }
 
 .latex:focus {
@@ -54,18 +157,21 @@
 }
 
 .rendered {
-  box-shadow: #c3c3c3 0px 2px 12px;
-  height: 100vh;
   width: 100%;
+  height: 100vh;
   padding: 25px;
+
+  box-shadow: #c3c3c3 0px 2px 12px;
+
   font-family: Georgia, serif;
 }
 
 .desc {
-  border: 1px solid #dadada;
-  border-radius: 5px;
   width: 70%;
   padding: 2px 5px;
+
+  border: 1px solid #dadada;
+  border-radius: 5px;
 }
 
 .keyword {
