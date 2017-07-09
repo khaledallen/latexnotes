@@ -72,3 +72,18 @@
   width: 25%;
   margin-right: 5%;
 }
+
+h3 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Guide START Styling */
+
+.flex-container {
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: center;
+}
