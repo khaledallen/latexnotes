@@ -124,9 +124,7 @@ function navigateResults(e){
 }
 
 
-const endpoint = "https://gist.githubusercontent.com/awareness481/"
-									+ "a1be0fb9b3a91eb78b6a4c1805da1f9f/raw/0512a07d86"
-									+ "ccf5e4ff8e2791d1b68c2da47e0566/l.json";
+const endpoint = "https://raw.githubusercontent.com/khaledallen/latexnotes/master/js/final.json";
 const syntax = [];
 
 var myHeaders = new Headers();
@@ -168,10 +166,11 @@ if (e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38) { //Do nothing if ENT
 	const resultsArray = findLatex(this.value, syntax);
 	console.log(this.value);
 	const html = resultsArray.map(math => {
+		const isImage = (math.image) ? `${math.description}, <img src="${math.image}" alt="${math.description}">` : math.description;
 		return `
 			<li class="list-group-item">
 			<span class="keyword">${math.key}</span>
-			<span class="desc">${math.description}</span>
+			<span class="desc">${isImage}</span>
 			</li>
 			`;
 	}).join('');
