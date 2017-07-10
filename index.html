@@ -32,9 +32,9 @@
     <ul>
       <li class="brand "><a href="#">$\LaTeX$Notes</a></li>
       <div class="link-wrapper">
-        <li class="links navbox"><a class="navbox" href="#markdown-ref">Guide</a></li>
-        <li class="links navbox"><a class="navbox" href="#">About</a></li>
-        <li class="links navbox"><a class="navbox" href="#">Contact Us</a></li>
+        <li class="links navbox"><a class="navbox" data-toggle="modal" data-target="#ref-panel">Guide</a></li>
+        <li class="links navbox"><a class="navbox" data-toggle="modal" data-target="#about-panel">About</a></li>
+        <li class="links navbox"><a class="navbox" data-toggle="modal" data-target="#contact-panel">Contact Us</a></li>
       </div>
     </ul>
   </nav>
@@ -61,66 +61,146 @@
 </div>
 </div>
 
-<div class="flex-container">
-  <div id="markdown-ref" class="flex-ch">
-    <h2>Supported Markdown</h2>
-    <h3>Headings</h3>
-    <pre>
-      # Biggest Heading
-      ## Heading 2
-      ### Heading 3
-      #### Heading 4</pre>
-      <h1>Biggest Heading</h1>
-      <h2>Heading 2</h2>
-      <h3>Heading 3</h2>
-      <h4>Heading 4</h4>
-    <h3>Text Styling</h3>
-    <pre>**text**</pre> <strong style="font-size: 18px;">Two asterisks around text make it bold</strong>
-    <pre>*text*</pre> <em style="font-size: 18px;">Italicize text</em>
-    <h3>Code Block</h3>
-    <pre>``` text ```</pre> Generates an <pre> awesome code-block
-      print("I like math");</pre>
-    <h3>Lists</h3>
-    <pre> Create Ordered lists by providing the item number followed by a dot
-      1. First Item
-      2. Second Item
-      3. Third Item
-    </pre>
-    <ol>
-      <li>First Item</li>
-      <li>Second Item</li>
-      <li>Third Item</li>
-    </ol>
-    <pre>Unordered lists are created by using an asterisk (*) before the list item
-      * item1
-      * item2
-      * item3
-    </pre>
-    <ul>
-      <li>item1</li>
-      <li>item2</li>
-      <li>item3</li>
-    </ul>
-</div>
+<!-- Modal -->
 
-    <div id="latex-ref" class="flex-ch latex-ref">
-      <h2 style="padding-bottom: 20px;">Using the LaTeX Keyword Search</h2>
-      <p>
-        To make writing math in LaTex easier, we've implemented a search feature. To use it, press
-        <strong>CTRL-M</strong>, and use the arrow keys (⇅) to navigate.<br>
-        <img src="img/ctrlm.png" alt="LaTex Guide"><br>
-        Press ENTER to insert the selected syntax at the cursor position, or ESC to close the
-        search bar.
-      </p>
+<div class="modal fade" id="ref-panel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">$\LaTeX$Notes Reference</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div id="markdown-ref" class="col-md-6">
+            <h2>Supported Markdown</h2>
+            <h3>Headings</h3>
+            <pre>
+              # Biggest Heading
+              ## Heading 2
+              ### Heading 3
+              #### Heading 4</pre>
+              <h1>Biggest Heading</h1>
+              <h2>Heading 2</h2>
+              <h3>Heading 3</h2>
+              <h4>Heading 4</h4>
+            <h3>Text Styling</h3>
+            <pre>**text**</pre> <strong style="font-size: 18px;">Two asterisks around text make it bold</strong>
+            <pre>*text*</pre> <em style="font-size: 18px;">Italicize text</em>
+            <h3>Code Block</h3>
+            <pre>``` text ```</pre> Generates an <pre> awesome code-block
+              print("I like math");</pre>
+            <h3>Lists</h3>
+            <pre> Create Ordered lists by providing the item number followed by a dot
+              1. First Item
+              2. Second Item
+              3. Third Item
+            </pre>
+            <ol>
+              <li>First Item</li>
+              <li>Second Item</li>
+              <li>Third Item</li>
+            </ol>
+            <pre>Unordered lists are created by using an asterisk (*) before the list item
+              * item1
+              * item2
+              * item3
+            </pre>
+            <ul>
+              <li>item1</li>
+              <li>item2</li>
+              <li>item3</li>
+            </ul>
+        </div>
+        <div id="latex-ref" class="col-md-6">
+          <h2 style="padding-bottom: 20px;">Using the LaTeX Keyword Search</h2>
+          <p>
+            To make writing math in LaTex easier, we've implemented a search feature. To use it, press
+            <strong>CTRL-M</strong>, and use the arrow keys (⇅) to navigate.<br>
+            <img src="img/ctrlm.png" alt="LaTex Guide"><br>
+            Press ENTER to insert the selected syntax at the cursor position, or ESC to close the
+            search bar.
+          </p>
+        </div>
+
+      </div> <!-- End row -->
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
     </div>
-    <!-- Reference for using LaTeX and CTRL-M should be here -->
+  </div>
+</div> <!-- End reference modal -->
 
+<!-- About Modal -->
+<div class="modal fade" id="about-panel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">About $\LaTeX$Notes</h4>
+      </div>
+      <div class="modal-body">
+        <p>This app was built by Jesse Jafa and Khaled Allen as part of the Chingu Chameleons Cohort Build-to-Learn Challege.
+           They are on a quest to become super web-developers. Khaled eventually wants to build robots and Jesse is .......
+           If you loved this app (or hated it) we'd love feedback: click the contact us button.
+           If you'd like to check out more of our work:</p>
+        <ul>
+          <li><a href="http://www.khaledallen.com/portfolio" target="blank">Khaled's Portfolio</a></li>
+          <li><a href="https://github.com/khaledallen" target="blank">Khaled's GitHub page</a></li>
+          <li><a href="" target="blank">Jesse's Portfolio</li>
+          <li><a href="https://github.com/awareness481" target="blank">Jesse's GitHub page</a></li>
+        </ul>
+        <p>You can check out the source code for this app on <a href="https://github.com/khaledallen/latexnotes" target="blank">Github</a>.</p>
+        <p>Code for finding the position of the cursor to show the search box was created by Dan Dascalescu and Jonathan Ong.</p>
+        <p>The Latex rendering is handled by MathJax</a>
+        <p>This project runs on Bootstrap, jQuery, vanilla javascript, and love.</p>
+        <p>We love math and believe that it enables people to see their world in a new, more expansive way. Please support you local math teacher or math student.
+           We hope this app helps make beautiful math more accessible.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
+
+<!-- Contact Modal -->
+<div class="modal fade" id="contact-panel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Contact the Creators</h4>
+      </div>
+      <div class="modal-body">
+        <p>If there are some Latex commands you think are missing from the search dropdown, please let us know here.
+          You can also just say hi <span style="font-size:2em;">&#x1F61C</span>.</p>
+        <form method="POST" action="http://formspree.io/khaled.allen@gmail.com">
+          <div class="form-group">
+            <input class="form-control" type="email" name="email" placeholder="Your email">
+          </div>
+          <div class="form-group">
+            <textarea class="form-control" name="message" placeholder="Your message"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Send</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <!-- JS scripts -->
   <script src="js/main.js"></script>
   <script src="js/bootstrap.min.js"></script>
   <script src="js/get-caret-pos.js"></script>
+
 </body>
 
 </html>

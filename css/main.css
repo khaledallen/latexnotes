@@ -6,10 +6,12 @@ nav {
   top:0;
 
   width: 100%;
+  padding: 0px 10px;
 
   transition:all 0.5s;
 
   background-color: #0277bd;
+
 }
 
 nav ul {
@@ -45,7 +47,7 @@ nav ul {
 nav a {
   display: inline-block;
 
-  padding:20px;
+  padding: 10px 10px;
 
   transition:all 0.2s;
   text-transform: uppercase;
@@ -65,26 +67,22 @@ nav a {
   font-size: 20px;
 }
 
-nav li {
-    margin: 20px 10px 20px 10px;
-}
-
 nav li a:visited{
   color: #ffffff;
 }
 
 .navbox {
-  border:1px solid #ffffff;
+  cursor: pointer;
+  margin-bottom: 2px;
 }
-
 .navbox:hover {
-  border:1px solid #0277bd;
   background-color: #ffffff;
   color: #0277bd;
+  margin-bottom: -2px;
 
- -webkit-box-shadow:0px 0px 3px 1px #0277bd ;
+ /*-webkit-box-shadow:0px 0px 3px 1px #0277bd ;
  -moz-box-shadow:0px 0px 3px 1px #0277bd ;
- box-shadow:0px 0px 3px 1px #0277bd ;
+ box-shadow:0px 0px 3px 1px #0277bd ;*/
 }
 
 /* END Navbar styling */
@@ -201,4 +199,8 @@ h3 {
 .latex-ref {
   font-size: 20px;
   text-align: left;
+}
+
+#ref-panel .modal-dialog {
+  width: 70vw;
 }
