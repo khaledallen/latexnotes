@@ -106,17 +106,17 @@ function navigateResults(e){
 	var next;
 
 	if (e.keyCode == 40) {
-		next = $("li").get(activeIndex + 1);
-		$(".results li").removeClass("active");
+		next = $(".result").get(activeIndex + 1);
+		$(".result").removeClass("active");
 		$(next).addClass("active");
 	}
 	if (e.keyCode == 38) {
-		next = $("li").get(activeIndex - 1);
-		$(".results li").removeClass("active");
+		next = $(".result").get(activeIndex - 1);
+		$(".result").removeClass("active");
 		$(next).addClass("active");
 	}
 	if (e.keyCode == 13) {
-		let term = $("li").get(activeIndex);
+		let term = $(".result").get(activeIndex);
 		term = $(".active .keyword").text();
 		insertAtCursor(term, textArea);
 		search.value = "";
@@ -169,7 +169,7 @@ if (e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38) { //Do nothing if ENT
 	console.log(this.value);
 	const html = resultsArray.map(math => {
 		return `
-			<li class="list-group-item">
+			<li class="result list-group-item">
 			<span class="keyword">${math.key}</span>
 			<span class="desc">${math.description}</span>
 			</li>
@@ -177,7 +177,7 @@ if (e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38) { //Do nothing if ENT
 	}).join('');
 	results.innerHTML = html;
 
-	$("li:first-of-type").addClass("active");
+	$("li.result:first-of-type").addClass("active");
 	//description css
 	// Doesnt work as of yet
 	 const node = document.querySelectorAll(".desc");
