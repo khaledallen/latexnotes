@@ -36,7 +36,7 @@ function renderText() {
 	text = markdown(text, '\\*(.*)\\*','em');
 	// Code blocks
 	text = markdown(text, '\\`{3}(.*)\\`{3}','pre');
-	text = markdown(text, '\\`(.*)\\`','tt');
+	text = markdown(text, '\\`(.*)\\`','code');
 	// Lists
 	text = markdown(text, '((\\d\\.\\s.*\\n)+)','ol');
 	text = markdown(text, '((\\*\\.\\s.*\\n)+)','ul');
