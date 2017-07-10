@@ -184,10 +184,5 @@ if (e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38) { //Do nothing if ENT
 }
 
 $("ul").on("click", "li", function(e) {
-<<<<<<< HEAD
     results.innerHTML = "";
-
-=======
-      results.innerHTML = "";
->>>>>>> d1762183... Removing accidentally added lines
 });
