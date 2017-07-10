@@ -138,9 +138,8 @@ nav li a:visited{
 
 .latex {
   width: 100%;
-  height: 100vh;
   padding: 10px;
-
+  height: 100vh;
   resize: none;
 
   border: none;
@@ -156,9 +155,8 @@ nav li a:visited{
 
 .rendered {
   width: 100%;
-  height: 100vh;
   padding: 25px;
-
+  height: 100vh;
   box-shadow: #c3c3c3 0px 2px 12px;
 
   font-family: Georgia, serif;
