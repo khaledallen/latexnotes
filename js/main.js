@@ -179,18 +179,15 @@ if (e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38) { //Do nothing if ENT
 	$("li.result:first-of-type").addClass("active");
 	//description css
 	// Doesnt work as of yet
-	 const node = document.querySelectorAll(".desc");
-	 const desc = Array.from(node);
-	 desc.forEach(box => box.classList.add("style"));
+
 }
 }
 
 $("ul").on("click", "li", function(e) {
-  for (let i = 0; i < syntax.length; i++) {
-    if (e.target.innerText === syntax[i].key) {
-      document.querySelector(".doc").innerHTML = `<code>${syntax[i].syntax}</code>`;
+<<<<<<< HEAD
+    results.innerHTML = "";
+
+=======
       results.innerHTML = "";
-      break;
-    }
-  }
+>>>>>>> d1762183... Removing accidentally added lines
 });
