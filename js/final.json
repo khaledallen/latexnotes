@@ -198,5 +198,11 @@
     {
         "key": "\\geq",
         "description": "Greater or equal relation symbol"
+    },
+    {
+        "key": "\\mathcal{L}",
+        "description": "The symbol for a Laplace transform or langrange multiplier",
+        "image": ""
     }
+ 
 ]
