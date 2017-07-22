@@ -1,3 +1,4 @@
+(function() {
 //Checks the latex input area and updates the rendered text area
 //every keyup or every time anything is changed
 const textArea = document.querySelector(".latex");
@@ -186,3 +187,4 @@ if (e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38) { //Do nothing if ENT
 $("ul").on("click", "li", function(e) {
     results.innerHTML = "";
 });
+})()
