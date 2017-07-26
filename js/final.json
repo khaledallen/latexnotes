@@ -212,11 +212,7 @@
         "description": "Three dots, used for ellipses"
     },
     {
-        "key": "\\begin{bmatrix}
-                  1 & 2 & 3  \\\\
-                  3 & 4 & 5  \\\\
-                  1 & 1 & 1
-                \\end{bmatrix}",
+        "key": "\\begin{bmatrix} 1 & 2 & 3  \\\\ 3 & 4 & 5  \\\\ 1 & 1 & 1 \\end{bmatrix}",
         "description": "A matrix, this is 3x3. Add new lines with backslashes"
     }
 ]
