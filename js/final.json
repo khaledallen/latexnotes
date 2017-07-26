@@ -202,12 +202,10 @@
     {
         "key": "\\mathcal{L}",
         "description": "The symbol for a Laplace transform or langrange multiplier",
-        "image": ""
     },
     {
         "key": "\\cdot",
         "description": "A dot, used to denote multiplication",
-        "image": ""
     }
 
 ]
