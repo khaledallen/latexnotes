@@ -214,5 +214,29 @@
     {
         "key": "\\begin{bmatrix} 1 & 2 & 3  \\\\ 3 & 4 & 5  \\\\ 1 & 1 & 1 \\end{bmatrix}",
         "description": "A matrix, this is 3x3. Add new lines with backslashes"
+    },
+    {
+        "key": "\\pm",
+        "description": "Plus-minus, plus or minus. A combination of the plus and minus sign"
+    },
+    {
+        "key": "\\approx",
+        "description": "Approximately. A wavy equal sign."
+    },
+    {
+        "key": "\\Rightarrow",
+        "description": "Right facing arrow."
+    },
+    {
+        "key": "\\Longrightarrow",
+        "description": "Long right facing arrow."
+    },
+    {
+      "key": "\\Lightarrow",
+      "description": "Left facing arrow."
+    },
+    {
+      "key": "\\Longlightarrow",
+      "description": "Long left facing arrow."
     }
 ]
