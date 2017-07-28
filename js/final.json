@@ -232,11 +232,11 @@
         "description": "Long right facing arrow."
     },
     {
-      "key": "\\Lightarrow",
+      "key": "\\Leftarrow",
       "description": "Left facing arrow."
     },
     {
-      "key": "\\Longlightarrow",
+      "key": "\\Longleftarrow",
       "description": "Long left facing arrow."
     }
 ]
