@@ -1,3 +1,4 @@
+(function() {
 //Checks the latex input area and updates the rendered text area
 //every keyup or every time anything is changed
 const textArea = document.querySelector(".latex");
@@ -68,7 +69,13 @@ function markdown(text, ex, tag) {
 }
 
 function showSearch(e) {
-	if (e.key == "m" && e.ctrlKey) {
+	/**
+	 * KeyBoardEvent/code is much more suitable than e.key mdn: Web/API/KeyboardEvent/code
+	 * but it not supported by IE & Microsoft Edge as of 30/07/2017
+	 * /code isn't affected by the state of the keyboard
+	 * so it will work even if CAPS LOCK is on or if the keyboard is in another language
+	 */
+	if ((e.key == "m" || e.key == "M") && e.ctrlKey) {
 		if (getComputedStyle(searchBar, null).display == "none") {
 			var coordinates = getCaretCoordinates(this, this.selectionEnd);
 			var topOffset = coordinates.top + this.getBoundingClientRect().top;
@@ -186,3 +193,4 @@ if (e.keyCode != 13 && e.keyCode != 40 && e.keyCode != 38) { //Do nothing if ENT
 $("ul").on("click", "li", function(e) {
     results.innerHTML = "";
 });
+})();

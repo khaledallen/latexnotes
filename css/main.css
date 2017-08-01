@@ -109,10 +109,6 @@ nav li a:visited{
   background: white;
 }
 
-/*.results li:nth-child(even) {
-  transform: perspective(100px) translateY(3px);
-} /*why is this here?*/
-
 #search-form-wrapper {
 	position: absolute;
 
@@ -156,7 +152,8 @@ nav li a:visited{
 .rendered {
   width: 100%;
   padding: 25px;
-  height: 100vh;
+  height: auto;
+  min-height: 100vh;
   box-shadow: #c3c3c3 0px 2px 12px;
 
   font-family: Georgia, serif;

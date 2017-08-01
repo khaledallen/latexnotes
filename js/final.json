@@ -50,7 +50,7 @@
     {
         "key": "\\sin x",
         "description": "Trigonometric function sin (sine)",
-        "image": "img/svg/sin.svg"
+        "image": "img/svg/sine.svg"
     },
     {
         "key": "\\tan x",
@@ -198,5 +198,45 @@
     {
         "key": "\\geq",
         "description": "Greater or equal relation symbol"
+    },
+    {
+        "key": "\\mathcal{L}",
+        "description": "The symbol for a Laplace transform or langrange multiplier"
+    },
+    {
+        "key": "\\cdot",
+        "description": "A dot, used to denote multiplication"
+    },
+    {
+        "key": "\\cdots",
+        "description": "Three dots, used for ellipses"
+    },
+    {
+        "key": "\\begin{bmatrix} 1 & 2 & 3  \\\\ 3 & 4 & 5  \\\\ 1 & 1 & 1 \\end{bmatrix}",
+        "description": "A matrix, this is 3x3. Add new lines with backslashes"
+    },
+    {
+        "key": "\\pm",
+        "description": "Plus-minus, plus or minus. A combination of the plus and minus sign"
+    },
+    {
+        "key": "\\approx",
+        "description": "Approximately. A wavy equal sign."
+    },
+    {
+        "key": "\\Rightarrow",
+        "description": "Right facing arrow."
+    },
+    {
+        "key": "\\Longrightarrow",
+        "description": "Long right facing arrow."
+    },
+    {
+      "key": "\\Leftarrow",
+      "description": "Left facing arrow."
+    },
+    {
+      "key": "\\Longleftarrow",
+      "description": "Long left facing arrow."
     }
 ]
