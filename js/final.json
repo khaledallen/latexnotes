@@ -238,5 +238,21 @@
     {
       "key": "\\Longleftarrow",
       "description": "Long left facing arrow."
+    },
+    {
+        "key": "{\\color{red}Red text}",
+        "description": "Colored text. Options are black, blue, brown, cyan, darkgray, gray, green, lightgray, lime, magenta, olive, orange, pink, purple, red, teal, violet, white, yellow."
+    },
+    {
+      "key": "\\emph{Italic text}",
+      "description": "Italic or emphasis text."
+    },
+    {
+      "key": "\\mathbb{R}",
+      "description": "Real numbers."
+    },
+    {
+      "key": "\\mathbb{Z}",
+      "description": "Integers numbers."
     }
 ]
