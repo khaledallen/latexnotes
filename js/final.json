@@ -240,8 +240,8 @@
       "description": "Long left facing arrow."
     },
     {
-        "key": "{\\color{red}Red text}",
-        "description": "Colored text. Options are black, blue, brown, cyan, darkgray, gray, green, lightgray, lime, magenta, olive, orange, pink, purple, red, teal, violet, white, yellow."
+      "key": "\\color{red}{\\text{Red text}}",
+      "description": "Colored text. Options are black, blue, brown, cyan, darkgray, gray, green, lightgray, lime, magenta, olive, orange, pink, purple, red, teal, violet, white, yellow."
     },
     {
       "key": "\\emph{Italic text}",
