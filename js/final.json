@@ -254,5 +254,13 @@
     {
       "key": "\\mathbb{Z}",
       "description": "Integers numbers."
+    },
+    {
+      "key": "\\infty",
+      "description": "Infinity symbol."
+    },
+    {
+      "key": "\\vec{v}",
+      "description": "Vector arrow."
     }
 ]
